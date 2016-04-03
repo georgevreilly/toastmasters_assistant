@@ -23,9 +23,9 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
     private LayoutInflater inflater;
     private ArrayList<String> parentItems, child;
 
-    public MyExpandableAdapter(ArrayList<String> parents, ArrayList<Object> childern) {
+    public MyExpandableAdapter(ArrayList<String> parents, ArrayList<Object> children) {
         this.parentItems = parents;
-        this.childtems = childern;
+        this.childtems = children;
     }
 
     public void setInflater(LayoutInflater inflater, Activity activity) {

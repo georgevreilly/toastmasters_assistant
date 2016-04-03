@@ -83,44 +83,45 @@ public class MainActivity extends ExpandableListActivity {
 
 
     public void setGroupParents() {
-        parentItems.add("Android");
-        parentItems.add("Core Java");
-        parentItems.add("Desktop Java");
-        parentItems.add("Enterprise Java");
+        parentItems.add("Meeting Agenda");
+        parentItems.add("Meeting Roles");
+        parentItems.add("Competent Communicator Speeches");
     }
 
     public void setChildData() {
-
-        // Android
-        ArrayList<String> child = new ArrayList<String>();
-        child.add("Core");
-        child.add("Games");
+        // Meeting Agenda
+        ArrayList<String> child = new ArrayList<>();
+        child.add("Introductions");
+        child.add("Speeches");
+        child.add("Table Topics");
+        child.add("Evaluations");
         childItems.add(child);
 
-        // Core Java
-        child = new ArrayList<String>();
-        child.add("Apache");
-        child.add("Applet");
-        child.add("AspectJ");
-        child.add("Beans");
-        child.add("Crypto");
+        // Meeting Roles
+        child = new ArrayList<>();
+        child.add("President");
+        child.add("Toastmaster");
+        child.add("Meeting Speaker");
+        child.add("Topicsmaster");
+        child.add("Topic Speaker");
+        child.add("Speech Evaluator");
+        child.add("General Evaluator");
+        child.add("Timekeeper");
+        child.add("Grammarian");
         childItems.add(child);
 
-        // Desktop Java
-        child = new ArrayList<String>();
-        child.add("Accessibility");
-        child.add("AWT");
-        child.add("ImageIO");
-        child.add("Print");
-        childItems.add(child);
-
-        // Enterprise Java
-        child = new ArrayList<String>();
-        child.add("EJB3");
-        child.add("GWT");
-        child.add("Hibernate");
-        child.add("JSP");
+        // Competent Communicator Speeches
+        child = new ArrayList<>();
+        child.add("1. Ice Breaker");
+        child.add("2. Organize Your Speech");
+        child.add("3. Get To The Point");
+        child.add("4. How To Say It");
+        child.add("5. Your Body Speaks");
+        child.add("6. Vocal Variety");
+        child.add("7. Research Your Topic");
+        child.add("8. Get Comfortable With Visual Aids");
+        child.add("9. Persuade With Power");
+        child.add("10. Inspire Your Audience");
         childItems.add(child);
     }
-
 }
