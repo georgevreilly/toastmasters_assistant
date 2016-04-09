@@ -38,13 +38,11 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
         child = (ArrayList<String>) childtems.get(groupPosition);
 
-        TextView textView = null;
-
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.group, null);
         }
 
-        textView = (TextView) convertView.findViewById(R.id.textView1);
+        TextView textView = (TextView) convertView.findViewById(R.id.group_textView);
         textView.setText(child.get(childPosition));
 
         convertView.setOnClickListener(new OnClickListener() {

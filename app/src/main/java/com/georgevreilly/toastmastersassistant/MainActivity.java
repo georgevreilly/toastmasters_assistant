@@ -4,8 +4,6 @@ import android.app.ExpandableListActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
