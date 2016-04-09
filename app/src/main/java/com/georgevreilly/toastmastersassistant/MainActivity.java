@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends ExpandableListActivity {
     private ArrayList<String> parentItems = new ArrayList<>();
-    private ArrayList<Object> childItems = new ArrayList<>();
+    private ArrayList<ArrayList<Pair<String, String>>> childItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

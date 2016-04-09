@@ -7,6 +7,7 @@ package com.georgevreilly.toastmastersassistant;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,13 +20,16 @@ import android.widget.Toast;
 public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
     private Activity activity;
-    private ArrayList<Object> childtems;
+    // private ArrayList<Object> childtems;
     private LayoutInflater inflater;
-    private ArrayList<String> parentItems, child;
+    private ArrayList<String> parentItems;
+    private ArrayList<ArrayList<Pair<String, String>>> childItems;
 
-    public MyExpandableAdapter(ArrayList<String> parents, ArrayList<Object> children) {
+    public MyExpandableAdapter(
+            ArrayList<String> parents,
+            ArrayList<ArrayList<Pair<String, String>>> children) {
         this.parentItems = parents;
-        this.childtems = children;
+        this.childItems = children;
     }
 
     public void setInflater(LayoutInflater inflater, Activity activity) {
@@ -33,10 +37,20 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
         this.activity = activity;
     }
 
+    private ArrayList<String> summaries(int groupPosition) {
+        ArrayList<Pair<String, String>> childPairs = childItems.get(groupPosition);
+        ArrayList<String> child = new ArrayList<>();
+
+        for (Pair<String, String> sumDetail : childPairs) {
+            child.add(sumDetail.first);
+        }
+
+        return child;
+    }
+
     @Override
     public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-
-        child = (ArrayList<String>) childtems.get(groupPosition);
+        final ArrayList<String> child = summaries(groupPosition);
 
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.group, null);
@@ -82,7 +96,8 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return ((ArrayList<String>) childtems.get(groupPosition)).size();
+        ArrayList<String> child = summaries(groupPosition);
+        return child.size();
     }
 
     @Override
