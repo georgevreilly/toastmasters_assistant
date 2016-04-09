@@ -20,12 +20,16 @@ and the structure of a typical Toastmasters' meeting.
 - Meeting roles (e.g., Topicsmaster, General Evaluator)
 - The 10 Competent Communicator Projects (e.g., Ice Breaker, Get Comfortable With Visual Aids)
 
-This example goes beyond spelling everything out with an endless series of XML `TextView`s.
-Instead it uses an `ExpandableListView` to provide a two-level presentation.
-Initially, all you see are the three main areas, Meeting Agenda, Meeting Roles,
-and Competent Communicator Speeches.
+An earlier version of this app tediously spelled everything out
+with a long series of XML `TextView`s embedded inside a `ScrollView`.
+
+This version uses an `ExpandableListView` to provide a two-level presentation.
+Initially, all you see are the three main areas,
+Meeting Agenda, Meeting Roles, and Competent Communicator Speeches.
 If you click any of these, they expand to show their children.
 This is adapted from [Java Code Geeks ExpandableListView Example](https://examples.javacodegeeks.com/android/core/ui/expandablelistview/android-expandablelistview-example/)
+The strings are now (unfortunately) literals in the Java code.
+It would be better if they were fetched from an XML string resource.
 
 I wanted to further expand each child area,
 so that tapping, say, Topicsmaster would expand into a more detailed explanation
