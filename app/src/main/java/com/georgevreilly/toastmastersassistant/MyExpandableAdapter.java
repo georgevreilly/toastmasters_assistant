@@ -7,7 +7,6 @@ package com.georgevreilly.toastmastersassistant;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,14 +19,13 @@ import android.widget.Toast;
 public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
     private Activity activity;
-    // private ArrayList<Object> childtems;
     private LayoutInflater inflater;
     private ArrayList<String> parentItems;
-    private ArrayList<ArrayList<Pair<String, String>>> childItems;
+    private ArrayList<ArrayList<SummaryDetail>> childItems;
 
     public MyExpandableAdapter(
             ArrayList<String> parents,
-            ArrayList<ArrayList<Pair<String, String>>> children) {
+            ArrayList<ArrayList<SummaryDetail>> children) {
         this.parentItems = parents;
         this.childItems = children;
     }
@@ -38,10 +36,10 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
     }
 
     private ArrayList<String> summaries(int groupPosition) {
-        ArrayList<Pair<String, String>> childPairs = childItems.get(groupPosition);
+        ArrayList<SummaryDetail> childPairs = childItems.get(groupPosition);
         ArrayList<String> child = new ArrayList<>();
 
-        for (Pair<String, String> sumDetail : childPairs) {
+        for (SummaryDetail sumDetail : childPairs) {
             child.add(sumDetail.first);
         }
 
